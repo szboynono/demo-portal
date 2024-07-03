@@ -9,6 +9,7 @@ import index from "./docs/resources/index.md?raw";
 import overview from "./docs/resources/overview.md?raw";
 import faq from "./docs/resources/faq.md?raw";
 import MarkdownRenderer from "./components/MarkdownRenderer";
+import Detail from "./pages/Detail";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,20 @@ const router = createBrowserRouter([
       {
         path: "",
         element: <Home />,
+      },
+      {
+        path: "detail",
+        element: <Detail />,
+        children: [
+          {
+            path: "naja",
+            element: <MarkdownRenderer markdownContent={index} />,
+          },
+          {
+            path: "faq",
+            element: <MarkdownRenderer markdownContent={faq} />,
+          },
+        ],
       },
       {
         path: "resources",
@@ -35,7 +50,7 @@ const router = createBrowserRouter([
             path: "faq",
             element: <MarkdownRenderer markdownContent={faq} />,
           },
-        ]
+        ],
       },
     ],
   },
