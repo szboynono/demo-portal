@@ -1,8 +1,5 @@
 import { Outlet } from "react-router-dom";
 import Tabs from "../components/Tabs";
-import SideNav from "../components/SideNav";
-
-const navigation = [{ name: "main", href: "naja", current: true }, { name: "faq", href: "faq", current: false }];
 
 function Detail() {
   return (
@@ -15,13 +12,8 @@ function Detail() {
         eius veniam! Quam?
       </p>
       <Tabs />
-      <div className="flex">
-        <div>
-        <SideNav navigation={navigation} />
-        </div>
-        <div>
-          <Outlet />
-        </div>
+      <div>
+        <Outlet />
       </div>
     </div>
   );

@@ -1,10 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
 export default function SideNav({ navigation }: { navigation: any[] }) {
+  const location = useLocation();
+
   return (
     <div className="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6">
       <nav className="flex flex-1 flex-col">
@@ -16,7 +18,7 @@ export default function SideNav({ navigation }: { navigation: any[] }) {
                   <Link
                     to={item.href}
                     className={classNames(
-                      item.current
+                      location.pathname.includes(item.name)
                         ? "bg-gray-50 text-indigo-600"
                         : "text-gray-700 hover:bg-gray-50 hover:text-indigo-600",
                       "group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6"

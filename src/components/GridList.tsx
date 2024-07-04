@@ -18,7 +18,7 @@ export default function GridList() {
     <ul role="list" className="mt-5 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {people.map((person) => (
         <li key={person.name} className="cursor-pointer hover:bg-gray-300 h-[200px] col-span-1 divide-y divide-gray-200 rounded-lg bg-white shadow">
-          <Link to='detail/naja'>
+          <Link to='detail/overview/main'>
           <div className="flex w-full items-center justify-between space-x-6 p-6">
             <div className="flex-1 truncate">
               <div className="flex items-center space-x-3">
